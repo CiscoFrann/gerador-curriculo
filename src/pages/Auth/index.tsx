@@ -1,9 +1,11 @@
 import { useState } from "react";
+
 import LoginForm from "../../components/LoginForm/inedx";
 import RegisterForm from "../../components/RegisterForm";
 
 function Auth() {
   const [activeTab, setactiveTab] = useState<"login" | "register">("login");
+
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
       <div className="hidden md:flex md:w-1/2 lg:w-[60%] bg-[#012169]  flex-col justify-center p-16 items-center gap-8">
