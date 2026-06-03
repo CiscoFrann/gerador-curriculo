@@ -3,8 +3,10 @@ import { FileText, Download } from "lucide-react";
 import { Plus } from "lucide-react";
 import CreateResumeCard from "../../components/ResumerCard/CreateResumerCard";
 import ResumeCard from "../../components/ResumerCard/ResumerCard";
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col gap-12">
       <div className="flex flex-row items-center justify-between">
@@ -17,7 +19,10 @@ export default function Dashboard() {
           </span>
         </div>
 
-        <button className="flex flex-row text-white font-semibold gap-4 bg-[#0B2F6B] cursor-pointer rounded-full items-center py-4 px-8 hover:scale-[1.02] transition-all duration-200">
+        <button
+          className="flex flex-row text-white font-semibold gap-4 bg-[#0B2F6B] cursor-pointer rounded-full items-center py-4 px-8 hover:scale-[1.02] transition-all duration-200"
+          onClick={() => navigate("/builder")}
+        >
           <Plus />
           <span>Novo Currículo</span>
         </button>
@@ -45,8 +50,8 @@ export default function Dashboard() {
             <Download className="w-6 h-6 text-purple-500" />
           </div>
           <div className="flex flex-col">
-            <span className="text-3xl font-bold text-[#012169] leading-none mb-1">
-              24
+            <span className="text-3xl font-bold text-[#0121] leading-none mb-1">
+              2469
             </span>
             <span className="text-sm font-semibold text-slate-400 leading-tight">
               Downloads
@@ -59,6 +64,9 @@ export default function Dashboard() {
 
       <main className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         <CreateResumeCard />
+        <ResumeCard />
+        <ResumeCard />
+        <ResumeCard />
         <ResumeCard />
       </main>
     </div>
